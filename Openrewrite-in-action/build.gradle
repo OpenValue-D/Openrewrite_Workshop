@@ -1,6 +1,6 @@
 plugins {
-   java
-   idea
+   id "java"
+   id "idea"
 }
 
 repositories {
@@ -10,8 +10,8 @@ repositories {
 
 idea {
    module {
-      isDownloadSources = true
-      isDownloadJavadoc = true
+      downloadSources = true
+      downloadJavadoc = true
    }
 }
 
