@@ -28,6 +28,10 @@ dependencyManagement {
     }
 }
 
+springBoot {
+    mainClass "com.openvalue.de.openrevrite.ia.Application"
+}
+
 dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies"))
 
