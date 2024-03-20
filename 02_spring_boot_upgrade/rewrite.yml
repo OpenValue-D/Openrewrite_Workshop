@@ -1,0 +1,10 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: compound_recipe
+displayName: Update Spring and add Spring Security
+recipeList:
+  - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5
+  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
+  - org.openrewrite.gradle.AddDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-security

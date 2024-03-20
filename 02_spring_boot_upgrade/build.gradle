@@ -3,6 +3,7 @@ plugins {
     id "idea"
     id("io.spring.dependency-management") version "0.6.1.RELEASE"
     id("org.springframework.boot") version "1.4.7.RELEASE"
+    id("org.openrewrite.rewrite") version "6.8.0"
 }
 
 repositories {
@@ -32,9 +33,15 @@ springBoot {
     mainClass "de.openvalue.workshop.openrewrite.Application"
 }
 
+rewrite{
+    activeRecipe("compound_recipe")
+}
+
 dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies"))
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("javax.inject:javax.inject")
+
+    rewrite("org.openrewrite.recipe:rewrite-spring:5.7.0")
 }
