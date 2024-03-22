@@ -18,3 +18,4 @@ We have a legacy spring boot project and want to update it to the latest spring 
 - create a custom recipe using a rewrite.yml configuration file
   - integrate the recipes from the build configuration
 - add another recipe, that adds the spring boot security starter dependency to our gradle build file
+- add another recipe, that upgrade the gradle wrapper to the latest version - we want to use Java 21 :)
