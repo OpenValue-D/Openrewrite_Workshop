@@ -6,7 +6,6 @@
  */
 plugins {
     id 'java-library'
-    id 'org.openrewrite.rewrite' version '6.10.0'
 }
 
 repositories {
@@ -14,11 +13,6 @@ repositories {
     mavenCentral()
 }
 
-rewrite {
-    activeRecipe 'de.openvalue.openrewrite.recipse.BestPractices'
-}
-
 dependencies {
     testImplementation 'junit:junit:4.13.2'
-    rewrite 'de.openvalue.openrewrite:my-recipes:0.0.1'
 }
