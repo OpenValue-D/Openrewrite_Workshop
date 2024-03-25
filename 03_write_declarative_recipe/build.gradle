@@ -1,0 +1,23 @@
+plugins {
+    id 'org.openrewrite.build.recipe-library' version 'latest.release'
+}
+
+group = "de.openvalue.openrewrite"
+description = "Declarative Recipe Library for Workshop"
+version = "0.0.1"
+
+dependencies {
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.8.1"))
+}
+
+signing {
+    required = false
+}
+
+publishing {
+    publications {
+        nebula(MavenPublication) {
+            suppressPomMetadataWarningsFor("runtimeElements")
+        }
+    }
+}
