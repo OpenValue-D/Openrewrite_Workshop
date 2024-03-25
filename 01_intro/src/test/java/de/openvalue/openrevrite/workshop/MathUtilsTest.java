@@ -1,6 +1,7 @@
 package de.openvalue.openrevrite.workshop;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
@@ -37,6 +38,12 @@ public class MathUtilsTest {
   @Category(SlowTest.class)
   public void testFactorialWithBigNumber() {
     Assert.assertEquals(1409286144, MathUtils.factorial(30));
+  }
+
+  @Test
+  @Ignore("should be refactored to throw exception")
+  public void testFactorialWithTooBigNumber() {
+    Assert.assertEquals(0 , MathUtils.factorial(170));
   }
 
 }
