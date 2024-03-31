@@ -25,3 +25,10 @@ public boolean isEven(int number) {
 
 - You cannot use the refaster class directly, but openrewrite will generate a recipe out of the refaster template.
   - The name of the Class is `<refaster-template-class-name>Recipe`
+- To add a Recipe to the test, have a look at the `rewriteRun` api
+  - ```
+    rewriteRun(
+      recipeSpec -> recipeSpec.recipe( new YourRecipeClass() ), 
+      java( "<given java code>","<expected-java-code>")
+    ); 
+    ```
