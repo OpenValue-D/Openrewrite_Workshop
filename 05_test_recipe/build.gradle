@@ -10,6 +10,11 @@ dependencies {
     implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.8.1"))
 
     // add test dependencies
+    testImplementation("org.openrewrite:rewrite-java")
+    testImplementation("org.openrewrite:rewrite-maven")
+    testImplementation("org.openrewrite.recipe:rewrite-java-dependencies")
+    testImplementation("org.openrewrite:rewrite-java-21")
+    testImplementation("org.openrewrite:rewrite-test")
     testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
 }
