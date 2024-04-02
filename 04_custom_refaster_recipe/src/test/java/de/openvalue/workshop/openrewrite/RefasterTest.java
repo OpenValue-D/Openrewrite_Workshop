@@ -1,4 +1,4 @@
-package com.openvalue.de.openrevrite.workshop;
+package de.openvalue.workshop.openrewrite;
 
 import static org.openrewrite.java.Assertions.java;
 
