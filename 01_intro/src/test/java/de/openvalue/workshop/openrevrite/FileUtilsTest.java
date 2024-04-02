@@ -1,4 +1,4 @@
-package de.openvalue.openrevrite.workshop;
+package de.openvalue.workshop.openrevrite;
 
 import org.junit.Assert;
 import org.junit.Rule;
@@ -7,8 +7,6 @@ import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
 import java.io.IOException;
-
-import static org.junit.Assert.*;
 
 public class FileUtilsTest {
 

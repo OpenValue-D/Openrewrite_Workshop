@@ -1,4 +1,4 @@
-package de.openvalue.openrevrite.workshop;
+package de.openvalue.workshop.openrevrite;
 
 import java.io.*;
 import java.util.Map;

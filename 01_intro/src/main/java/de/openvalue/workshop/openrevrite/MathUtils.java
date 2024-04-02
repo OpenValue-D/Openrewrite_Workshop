@@ -1,4 +1,4 @@
-package de.openvalue.openrevrite.workshop;
+package de.openvalue.workshop.openrevrite;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
