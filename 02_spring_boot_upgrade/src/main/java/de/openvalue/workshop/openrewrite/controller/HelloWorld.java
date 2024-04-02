@@ -1,6 +1,6 @@
-package com.openvalue.de.openrevrite.ia.controller;
+package de.openvalue.workshop.openrewrite.controller;
 
-import com.openvalue.de.openrevrite.ia.service.CounterService;
+import de.openvalue.workshop.openrewrite.service.CounterService;
 import javax.inject.Inject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

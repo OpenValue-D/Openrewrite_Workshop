@@ -1,4 +1,4 @@
-package com.openvalue.de.openrevrite.ia.service;
+package de.openvalue.workshop.openrewrite.service;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.ManagedBean;
