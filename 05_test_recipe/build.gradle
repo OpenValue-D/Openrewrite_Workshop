@@ -1,0 +1,16 @@
+plugins {
+    id 'org.openrewrite.build.recipe-library' version 'latest.release'
+}
+
+group = "de.openvalue.openrewrite"
+description = "Declarative Recipe Library for Workshop"
+version = "0.0.1"
+
+dependencies {
+    implementation(platform("org.openrewrite.recipe:rewrite-recipe-bom:2.8.1"))
+    runtimeOnly("org.openrewrite.recipe:rewrite-testing-frameworks:2.6.0")
+
+    // add test dependencies
+    testImplementation("org.junit.jupiter:junit-jupiter-api:latest.release")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:latest.release")
+}
