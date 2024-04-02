@@ -1,10 +1,10 @@
 type: specs.openrewrite.org/v1beta/recipe
-name: de.openvalue.openrewrite.recipe.BestPractices
+name: de.openvalue.workshop.openrewrite.recipe.BestPractices
 displayName: Workshop Best Practices
 description: Applies best practices in the workshop
 recipeList:
   - org.openrewrite.java.RemoveUnusedImports
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: de.openvalue.openrevrite
-      newPackageName: de.openvalue.openrewrite
+      oldPackageName: de.openvalue.workshop.openrevrite
+      newPackageName: de.openvalue.workshop.openrewrite
