@@ -1,7 +1,7 @@
 type: specs.openrewrite.org/v1beta/recipe
-name: de.openvalue.openrewrite.recipe.RenamePackage
+name: de.openvalue.workshop.openrewrite.recipe.RenamePackage
 displayName: Rename package name
 recipeList:
 - org.openrewrite.java.ChangePackage:
-    oldPackageName: de.openvalue.openrevrite
-    newPackageName: de.openvalue.openrewrite
+    oldPackageName: de.openvalue.workshop.openrevrite
+    newPackageName: de.openvalue.workshop.openrewrite
