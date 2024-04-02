@@ -19,3 +19,9 @@ We have a legacy spring boot project and want to update it to the latest spring 
   - integrate the recipes from the build configuration
 - add another recipe, that adds the spring boot security starter dependency to our gradle build file
 - add another recipe, that upgrade the gradle wrapper to the latest version - we want to use Java 21 :)
+
+
+## Hint
+
+- use `rewriteDiscover` to find the recipe to use
+- alternatively use https://docs.openrewrite.org/recipes
