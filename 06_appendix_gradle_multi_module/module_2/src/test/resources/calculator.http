@@ -1,0 +1,36 @@
+###
+# @name test add
+POST http://localhost:8080/add
+Content-Type: application/json
+
+{
+   "a": 1,
+   "b": 2
+}
+###
+# @name test subtract
+POST http://localhost:8080/subtract
+Content-Type: application/json
+
+{
+   "a": 1,
+   "b": 2
+}
+###
+# @name test multiply
+POST http://localhost:8080/multiply
+Content-Type: application/json
+
+{
+   "a": 2,
+   "b": 3
+}
+###
+# @name test divide
+POST http://localhost:8080/divide
+Content-Type: application/json
+
+{
+   "a": 4,
+   "b": 2
+}
