@@ -1,0 +1,15 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: de.openvalue.workshop.GradleMultiModuleFix
+recipeList:
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: de.openvalue.workshop.closedrewrite
+      newPackageName: de.openvalue.workshop.openrewrite
+  - org.openrewrite.java.testing.junit5.JUnit4to5Migration
+  - org.openrewrite.java.testing.assertj.JUnitToAssertj
+  - org.openrewrite.gradle.AddDependency:
+      acceptTransitive: true
+      configuration: testImplementation
+      groupId: org.assertj
+      artifactId: assertj-core
+      version: 3.x
