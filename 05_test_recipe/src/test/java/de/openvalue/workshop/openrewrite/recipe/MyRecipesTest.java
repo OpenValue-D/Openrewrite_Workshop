@@ -1,4 +1,4 @@
-package de.openvalue.openrewrite.recipe;
+package de.openvalue.workshop.openrewrite.recipe;
 
 import org.junit.jupiter.api.Test;
 import org.openrewrite.test.RecipeSpec;
