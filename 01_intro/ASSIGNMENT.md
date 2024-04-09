@@ -24,3 +24,7 @@ We have an old utils library and want to clean it up and update the tests to Jun
 - choose the proper recipe to rename the package
 - create a rewrite.yml with a custom recipe containing the configuration for the rename package recipe
 - run the custom recipe and examine the results
+
+## Hints
+- use the discover command to find the proper recipes
+- another source for recipes is on the [website](https://docs.openrewrite.org/recipes)
