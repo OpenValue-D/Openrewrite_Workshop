@@ -75,24 +75,25 @@ public class RenameClassFieldRecipe
          final J.VariableDeclarations.NamedVariable variable,
          final ExecutionContext ctx )
       {
+         final J.VariableDeclarations.NamedVariable namedVariable = super.visitVariable( variable, ctx );
          final Cursor cursor = getCursor();
          if( !variable.isField( cursor ) ) {
-            return super.visitVariable( variable, ctx );
+            return namedVariable;
          }
 
          final JavaType.Variable variableType = variable.getVariableType();
          if( variableType == null ) {
-            return super.visitVariable( variable, ctx );
+            return namedVariable;
          }
 
          final J.Identifier identifier = variable.getName();
          final JavaType.Variable fieldType = identifier.getFieldType();
          if( fieldType == null ) {
-            return super.visitVariable( variable, ctx );
+            return namedVariable;
          }
 
          if( !Objects.equals( before, identifier.getSimpleName() ) ) {
-            return super.visitVariable( variable, ctx );
+            return namedVariable;
          }
 
          final J.Identifier myChangedSimpleName =
@@ -113,20 +114,21 @@ public class RenameClassFieldRecipe
          final J.Identifier identifier,
          final ExecutionContext ctx )
       {
+         final J.Identifier visitedIdentifier = super.visitIdentifier( identifier, ctx );
          if( !Objects.equals( before, identifier.getSimpleName() ) ) {
-            return super.visitIdentifier( identifier, ctx );
+            return visitedIdentifier;
          }
 
          final Cursor cursor = getCursor();
          final JavaType.Variable fieldType = identifier.getFieldType();
          if( fieldType == null ) {
-            return super.visitIdentifier( identifier, ctx );
+            return visitedIdentifier;
          }
 
          final JavaType owner = fieldType.getOwner();
          final JavaType fieldOwner = cursor.getNearestMessage( "OWNER" );
          if( !Objects.equals( fieldOwner, owner ) ) {
-            return super.visitIdentifier( identifier, ctx );
+            return visitedIdentifier;
          }
 
          final J.Identifier myChangedSimpleName =
