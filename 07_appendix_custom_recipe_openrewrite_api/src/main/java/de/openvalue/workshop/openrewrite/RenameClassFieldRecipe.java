@@ -106,7 +106,7 @@ public class RenameClassFieldRecipe
             cursor.putMessageOnFirstEnclosing( J.ClassDeclaration.class, "OWNER", owner );
          }
 
-         return super.visitVariable( myChangedVariable, ctx );
+         return myChangedVariable;
       }
 
       @Override
@@ -134,7 +134,7 @@ public class RenameClassFieldRecipe
          final J.Identifier myChangedSimpleName =
             identifier.withSimpleName( after ).withFieldType( fieldType.withName( after ) );
 
-         return super.visitIdentifier( myChangedSimpleName, ctx );
+         return myChangedSimpleName;
       }
    }
 }
