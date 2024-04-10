@@ -70,6 +70,69 @@ public class RenameClassFieldRecipe
    private class RenameFieldVisitor
       extends JavaIsoVisitor< ExecutionContext >
    {
-      // TODO: implement me
+      @Override
+      public J.VariableDeclarations.NamedVariable visitVariable(
+         final J.VariableDeclarations.NamedVariable variable,
+         final ExecutionContext ctx )
+      {
+         final Cursor cursor = getCursor();
+         if( !variable.isField( cursor ) ) {
+            return super.visitVariable( variable, ctx );
+         }
+
+         final JavaType.Variable variableType = variable.getVariableType();
+         if( variableType == null ) {
+            return super.visitVariable( variable, ctx );
+         }
+
+         final J.Identifier identifier = variable.getName();
+         final JavaType.Variable fieldType = identifier.getFieldType();
+         if( fieldType == null ) {
+            return super.visitVariable( variable, ctx );
+         }
+
+         if( !Objects.equals( before, identifier.getSimpleName() ) ) {
+            return super.visitVariable( variable, ctx );
+         }
+
+         final J.Identifier myChangedSimpleName =
+            identifier.withSimpleName( after ).withFieldType( fieldType.withName( after ) );
+         final J.VariableDeclarations.NamedVariable myChangedVariable =
+            variable.withName( myChangedSimpleName ).withVariableType( variableType.withName( after ) );
+
+         final JavaType owner = variableType.getOwner();
+         if(owner != null) {
+            cursor.putMessageOnFirstEnclosing( J.ClassDeclaration.class, "OWNER", owner );
+         }
+
+         return super.visitVariable( myChangedVariable, ctx );
+      }
+
+      @Override
+      public J.Identifier visitIdentifier(
+         final J.Identifier identifier,
+         final ExecutionContext ctx )
+      {
+         if( !Objects.equals( before, identifier.getSimpleName() ) ) {
+            return super.visitIdentifier( identifier, ctx );
+         }
+
+         final Cursor cursor = getCursor();
+         final JavaType.Variable fieldType = identifier.getFieldType();
+         if( fieldType == null ) {
+            return super.visitIdentifier( identifier, ctx );
+         }
+
+         final JavaType owner = fieldType.getOwner();
+         final JavaType fieldOwner = cursor.getNearestMessage( "OWNER" );
+         if( !Objects.equals( fieldOwner, owner ) ) {
+            return super.visitIdentifier( identifier, ctx );
+         }
+
+         final J.Identifier myChangedSimpleName =
+            identifier.withSimpleName( after ).withFieldType( fieldType.withName( after ) );
+
+         return super.visitIdentifier( myChangedSimpleName, ctx );
+      }
    }
 }
