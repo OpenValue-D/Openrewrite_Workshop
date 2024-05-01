@@ -9,3 +9,4 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-security
   - org.openrewrite.gradle.UpdateGradleWrapper
+  - org.openrewrite.maven.UpdateMavenWrapper
